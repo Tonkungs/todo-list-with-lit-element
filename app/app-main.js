@@ -77,11 +77,12 @@ class AppMain extends LitElement {
             default:
                 break;
         }
-        
+        // https://stackoverflow.com/questions/5024085/whats-the-point-of-slice0-here
         // console.log('listConcat', listConcat)
         this.todolist = listConcat
         // ให้ค่าอาเรย์เปลี่ยนแปลง แต่ .map จะรู้แค่ผิวข้างนอก แต่ไม่รู้ถึงอ็อปเจ็ค
-        this.todolist = this.todolist.slice(0)
+        // this.todolist = this.todolist.slice(0)
+        this.todolist = [...this.todolist]
     }
     // _shouldRender(props, changedProps, prevProps) {
     //     // 2
